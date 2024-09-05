@@ -1,0 +1,129 @@
+<DIV align="center">
+<FONT face="arial" size="-1">
+<FORM name=FastLogInForm 
+      action="/_cgi/dreamchat.php" 
+      method="post" 
+      target="_top"
+      onSubmit="return FormOnSubmit();">
+
+<table width="100%" height="380" cellspacing="0" cellpadding="0" class="text" style="background-image: url('london7-800.jpg')">
+
+<tr>
+<td valign="top" border=0 width="100%">
+
+
+
+
+<TABLE border="0" cellspacing="3" cellpadding="0" class="text" width="100%">
+  <TR>
+    <TD colspan="3" class="header" align=center>
+
+<br>
+
+     Зарегистрированный пользователь
+    </TD>
+  </TR>
+  <TR>
+    <TD valign="top" align="right">
+     <FONT face="arial" size="-1">Ник</FONT>
+    </TD>
+    <TD valign="top" colspan="2">
+     <INPUT class="field" type="text" size=15 maxlength=15 name="Nick" value="">
+    </TD>
+  </TR>
+  <TR>
+    <TD valign="top" align="right">
+     <FONT face="arial" size="-1">Пароль</FONT>
+    </TD>
+    <TD valign="top">
+     <INPUT class="field" type="password" size=15 maxlength=15 name="Password" value="">
+    </TD>
+    <TD valign="top">
+     <FONT face="arial" size="-1">
+     &nbsp;
+<!-- <A href="" title="Если вы забыли пароль войдите в этот раздел. Пароль будет выслан на E-Mail"> [забыли?] </A> -->
+     </FONT>
+    </TD>
+  </TR>
+  <TR>
+    <TD valign="top" align="right">
+     <FONT face="arial" size="-1">Цвет</FONT>
+    </TD>
+    <TD valign="top" colspan="2" class="text">
+     <SCRIPT language="JavaScript">
+      FormDrawColorControl
+       (ForeColorsArray,"Color",FORM_Color,12,
+        "<span class='text'><FONT size='-2'>Использовать предыдущий цвет</font></span>");
+     </SCRIPT>
+    </TD>
+  </TR>
+  <TR>
+    <TD valign="top" align="right">
+     <FONT face="arial" size="-1">Тема</FONT>
+    </TD>
+    <TD valign="top">
+     <INPUT class="field" type="text" size=15 maxlength=40 name="Topic" value="">
+    </TD>
+    <TD valign="top">
+     <FONT face="arial" size="-2">
+     Необязательный параметр.<br>     
+     Этот текст будет выведен рядом с вашим ником после входа в чат
+     </FONT>
+    </TD>
+  </TR>
+  <TR>
+    <TD valign="top" align="right">
+     <FONT face="arial" size="-1">&nbsp;</FONT>
+    </TD>
+    <TD valign="top" colspan="2">
+     <INPUT type="checkbox" 
+            CHECKED 
+            name="GZIP"
+            value="1"
+            title="Автоматически включить сжатие данных по GZIP, если броузер поддерживает GZIP stream (IE,Mozzila - поддерживают). Если у вас проблемы с отображением чата при включеном этом флажке, отключите его.">
+     <FONT face="arial" size="-2">
+     Включить сжатие данных, если поддерживается броузером
+     </FONT>
+    </TD>
+  </TR>
+  <TR>
+    <TD valign="top" align="right">
+     <FONT face="arial" size="-1">Стиль</FONT>
+    </TD>
+    <TD valign="top" colspan="2">
+     <INPUT type="radio" 
+            CHECKED 
+            name="ClientMode"
+            value="0"
+            title="Класический стиль чата (максимальная совместимость)">
+     <FONT face="arial" size="-2">
+     Класический стиль
+     </FONT>
+     <BR/>
+     <INPUT type="radio" 
+            name="ClientMode"
+            value="2"
+            title="Новый стиль чата (необходим IE 6.0 или выше либо Mozilla/FireFox 1.5 или выше)">
+     <FONT face="arial" size="-2">
+     Modern
+     </FONT>
+    </TD>
+  </TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD valign="top" colspan="2">
+     <INPUT class="button" type="submit" name="CmdFastLogIn" value="Войти в чат"
+            title="Вход в чат (необходимо заполнить ник и пароль)">
+     <INPUT class="button" type="submit" name="CmdSetsLogIn" value="Настройки..."
+            title="Вход в раздел кооректировки настроек (необходимо заполнить ник и пароль)">
+    </TD>
+  </TR>
+</TABLE>
+<INPUT type="hidden" name="PreSID" value="">
+<INPUT type="hidden" name="LogData" value="">
+
+
+</TABLE>
+</FONT>
+</FORM>
+</DIV>

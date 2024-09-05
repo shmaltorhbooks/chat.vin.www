@@ -1,0 +1,46 @@
+body  {
+      scrollbar-track-color: #0067A2;
+      scrollbar-arrow-color: #FFFFFF;
+
+    scrollbar-3dlight-color: #0086CA;
+  scrollbar-highlight-color: #FFFFFF;
+
+ scrollbar-darkshadow-color: #0086CA;
+     scrollbar-shadow-color: #FFFFFF;
+
+       scrollbar-base-color: #0086CA;
+       scrollbar-face-color: #0086CA}
+
+.header               {font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold;   color:white; text-decoration:none; text-indent: 0px}
+.newsHead             {font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: normal; color:white; text-decoration:none; text-indent: 0px;text-align:center}
+.pagesubtitle         {font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold;  color:#773200;text-decoration:none; text-indent: -70px;text-align:center}
+.text                 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color:white; text-decoration:none; text-indent: 0px;text-align:justify;}
+
+.form_hr              {color:white; }
+
+.error_mess           {color:darkred; }
+.aux_mess             {color:yellow; }
+
+.button   {color:white;font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; border-width: 1px 1px 1px 1px; border-color:#FFFFFF; border-style:solid; background-color:#ffffff;}
+
+.menu     {color:black;font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; text-decoration:none; text-indent: 5px}
+.menu:link    {}
+.menu:visited {}
+.menu:hover   {color:#0067A2}
+
+.field    {border-width: 1px 1px 1px 1px; border-color:darkblue; border-style:solid}
+
+.rmenu                {font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color:white; text-decoration:none; text-indent: 3px}
+.rmenu:link           {}
+.rmenu:visited        {}
+.rmenu:hover          {}
+
+.linkDesc             {font-family: Arial, Helvetica, sans-serif; font-size: 11px;                                   text-decoration:none;}
+.link                 {font-family: Arial, Helvetica, sans-serif;                  font-weight: bold;   color:white; text-decoration:underline;}
+.link:link            {}
+.link:visited         {color:#005792}
+.link:hover           {color:#FFD244}
+
+.frame {border-width: 1px 1px 1px 1px; border-color:#FFFFFF; border-style:solid}
+
+.sp6x6 {width:6px;height:6px;font-size:6px}

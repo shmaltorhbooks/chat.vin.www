@@ -1,0 +1,29 @@
+<? include_once(dirname(__FILE__)."/"."../../../_cgi/tpl/cformio.php"); ?>
+<div class="header">
+ <div align="center">
+ Ошибка обработки запроса
+ </div>
+</div>
+
+<?
+if (FORM_IOStrVar('ChatErrorText') != "")
+ {
+  ?>
+  <div class="header">
+  <div align="center" class="error_mess">
+    Причина: <?=FORM_IOStrVar('ChatErrorText') ?>
+  </div>
+  </div>
+  <?
+ }
+?>
+
+<div class="text">
+ <div align="center">
+ Попробуйте вернуться на 
+ <a href="/" target="_top" class="link">главную страницу</a>
+ и повторить запрос
+ </div>
+</div>
+
+

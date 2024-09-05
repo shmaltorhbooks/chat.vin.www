@@ -1,0 +1,214 @@
+<DIV align="center">
+<FONT face="arial" size="-1">
+
+<FORM name=SetupForm 
+      action="/_cgi/dreamchat.php" 
+      method="post" 
+      target="_top"
+      onsubmit="return FormOnSubmit();">
+<TABLE border="0" cellspacing="2" cellpadding="0" class="text">
+  <TR>
+    <TD valign="top" align="right" nowrap>
+     <FONT face="arial" size="-1"><B>Ник</B></FONT>
+    </TD>
+    <TD valign="top">
+     <INPUT class="field" type="text" size=15 maxlength=15 name="Nick" value="">
+    </TD>
+    <TD valign="top">
+     <FONT face="arial" size="-2">
+     Ник может быть заменен только на сходный по начертанию
+     </FONT>
+    </TD>
+  </TR>
+  
+  <TR>
+    <TD valign="middle" align="right" nowrap>
+     <FONT face="arial" size="-1"><B>Пол</B></FONT>
+    </TD>
+    <TD valign="middle" colspan="2">
+     <SELECT class="field" name="Gender">
+      <SCRIPT>
+      FormDrawGenderOptions(FORM_Gender);
+      </SCRIPT>
+     </SELECT>
+    </TD>
+  </TR>
+  
+  <TR>
+    <TD valign="top" align="right" nowrap>
+     <FONT face="arial" size="-1"><B>Ваш цвет по<BR>умолчанию</B></FONT>
+    </TD>
+    <TD valign="top" colspan="2">
+     <SCRIPT>
+     FormDrawColorControl(ForeColorsArray,"Color",FORM_Color,12,"");
+     </SCRIPT>
+    </TD>
+  </TR>
+  
+  <TR>
+    <TD valign="top" align="right" nowrap>
+     <FONT face="arial" size="-1"><B>E-Mail</B></FONT>
+    </TD>
+    <TD valign="top" colspan=2>
+     <INPUT class="field" type="text" size=15 maxlength=100 name="EMail" value="">
+    </TD>
+  </TR>
+
+  <TR>
+    <TD>
+    &nbsp;
+    </TD>
+    <TD valign="top" colspan=2>
+     <FONT face="arial" size="-2">
+     Ваш E-Mail не сообщается другим пользователям. Если E-Mail указан, на него будет выслан ваш пароль при использовании режима "забыл пароль".
+     </FONT>
+    </TD>
+  </TR>
+  
+  <TR>
+    <TD valign="top">&nbsp;</TD>
+    <TD valign="top" colspan="2">
+     <FONT face="arial" size="-1">
+      <B>Изменение пароля</B>
+     </FONT>
+    </TD>
+  </TR>
+  
+  <TR>
+    <TD valign="top" align="right" nowrap>
+     <FONT face="arial" size="-1"><B>Новый пароль</B></FONT>
+    </TD>
+    <TD valign="top">
+     <INPUT class="field" type="password" 
+            size=15 maxlength=15 name="Password" value="">
+    </TD>
+    <TD valign="top" rowspan=2>
+     <FONT face="arial" size="-2">
+     Если не хотите менять пароль оставте оба поля пустыми.
+     Примечание: Пароль чуствителен к регистру букв 
+                 и языку (раскладке клавиатуры). 
+     </FONT>
+    </TD>
+  </TR>
+  
+  <TR>
+    <TD valign="top" align="right" nowrap>
+     <FONT face="arial" size="-1"><B>Новый пароль<BR>(ещё раз)</B></FONT>
+    </TD>
+    <TD valign="top">
+     <INPUT class="field" type="password" 
+            size=15 maxlength=15 name="PasswordAdd" value="">
+    </TD>
+  </TR>
+
+  <TR>
+    <TD valign="top">
+     <FONT face="arial" size="-1">&nbsp;</FONT>
+    </TD>
+    <TD valign="top" colspan="2">
+     <FONT face="arial" size="-1">
+      <INPUT type="hidden" name="SID" value="">
+      <INPUT type="submit" value="Обновить" name="CmdSIDUpdateSet"
+             class="button"
+             title="Обновить параметры и вернуться в это окно">
+      <INPUT type="submit" value="Вход в чат" name="CmdSIDGoChat"
+             class="button"
+             title="Обновить параметры и войти в чат">
+      <INPUT type="hidden" name="NickSrc" value="">
+     </FONT>
+    </TD>
+  </TR>
+  
+  <TR>
+   <TD valign="top" align=center colspan="3">
+   <HR class="form_hr">
+   <b>Дополнительные (необязательные) параметры:</b>
+   </TD>
+  </TR>
+  
+  <TR>
+   <TD valign="top" align="right" nowrap>
+    <FONT face="arial" size="-1"><B>О Себе</B></FONT>
+   </TD>
+   <TD valign="top" colspan="2">
+    <FONT face="arial" size="-1">
+    Информация о себе для других пользователей
+    <!-- (заполнять необязательно) -->:<br>
+    </FONT>
+    <FONT face="arial" size="-2">
+    Эта информация о вас будет видна всем другим пользователям.
+    Напишите то, что посчитаете нужным. Например:
+    Имя, Возраст, Любимые книги, Любимая музыка, Хобби, итд.
+    Вы сами решате что писать и насколько то что написано 
+    соответствует действительности :-)
+    <br>
+    </FONT>
+    <TEXTAREA class="field" Name="SelfNotes"
+    TITLE="Информация о вас для других пользователей"
+    ROWS=5 COLS=50
+    STYLE="font-size: smaller"
+    WRAP=VIRTUAL
+    ></TEXTAREA><br>
+   </TD>
+  </TR>
+  
+  <TR>
+    <TD valign="top" align="right">
+     <FONT face="arial" size="-1"><b>Тема<b></FONT>
+    </TD>
+    <TD valign="top">
+     <INPUT class="field" type="text" size=15 maxlength=40 name="Topic" value="">
+    </TD>
+    <TD valign="top">
+     <FONT face="arial" size="-2">
+     Необязательный параметр.
+     Ваше настроение/вопрос/тема на сегодня.
+     Этот текст будет выведен рядом с вашим ником после входа в чат
+     </FONT>
+    </TD>
+  </TR>
+  <TR>
+    <TD valign="top" align="right">
+     <FONT face="arial" size="-1">&nbsp;</FONT>
+    </TD>
+    <TD valign="top" colspan="2">
+     <INPUT type="checkbox" 
+            CHECKED 
+            name="GZIP"
+            value="1"
+            title="Автоматически включить сжатие данных по GZIP, если броузер поддерживает GZIP stream (IE,Mozzila - поддерживают). Если у вас проблемы с отображением чата при включеном этом флажке, отключите его.">
+     <FONT face="arial" size="-2">
+     Включить сжатие данных, если поддерживается броузером
+     </FONT>
+    </TD>
+  </TR>
+  <TR>
+    <TD valign="top" align="right">
+     <FONT face="arial" size="-1">Стиль</FONT>
+    </TD>
+    <TD valign="top" colspan="2">
+     <INPUT type="radio" 
+            CHECKED 
+            name="ClientMode"
+            value="0"
+            title="Класический стиль чата (максимальная совместимость)">
+     <FONT face="arial" size="-2">
+     Класический стиль
+     </FONT>
+     <BR/>
+     <INPUT type="radio" 
+            name="ClientMode"
+            value="2"
+            title="Новый стиль чата (необходим IE 6.0 или выше либо Mozilla/FireFox 1.5 или выше)">
+     <FONT face="arial" size="-2">
+     Modern
+     </FONT>
+    </TD>
+  </TR>
+</TABLE>
+<INPUT type="hidden" name="PreSID" value="">
+<INPUT type="hidden" name="LogData" value="">
+<INPUT type="hidden" name="LogDataAdd" value="">
+</FORM>
+</FONT>
+</DIV>

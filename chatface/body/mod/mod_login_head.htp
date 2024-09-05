@@ -1,0 +1,95 @@
+<? include(dirname(__FILE__)."/"."formpresid.htp"); ?>
+
+<SCRIPT language="JavaScript">
+
+function ChatFillLogData(Form)
+ {
+  if (!ChatFillLogDataForFormByName(Form,"Nick","Password","LogData"))
+   {
+    return(false);
+   }
+
+  return(true);
+ }
+
+</SCRIPT>
+
+<SCRIPT language="JavaScript">
+
+// External var (FormControl draw specific logic)
+var FORM_Color = "";
+FORM_Color = <?=FORM_IOStrVarFld('Color') ?>;
+
+if (FORM_Color == "")
+ {
+// "Использовать передыдущий цвет"
+ }
+
+function FormSetValues()
+ {
+  document.FastLogInForm.Nick.value            = <?=FORM_IOStrVarFld('Nick') ?>;
+  document.FastLogInForm.Password.value        = '';
+  document.FastLogInForm.Topic.value           = <?=FORM_IOStrVarFld('Topic') ?>;
+  document.FastLogInForm.PreSID.value          = FORM_PreSID;
+//document.FastLogInForm.Color.value           = FORM_Color;
+ }
+</SCRIPT>
+
+<SCRIPT>
+var FORM_SendFlag = false;
+
+function FormCheckUpDataIsOk(Form)
+ {
+  if (Form.Nick.value == "")
+   {
+    alert("Не указан ник");
+    Form.Nick.focus();
+    return(false);
+   }
+
+  if (Form.Password.value == "")
+   {
+    alert("Не указан пароль");
+    Form.Password.focus();
+    return(false);
+   }
+
+  <?
+  if (defined("ChatConstLogDataActiveFlag"))
+   {
+    ?>
+
+    if (!ChatFillLogData(Form))
+     {
+      return(false);
+     }
+
+    <?
+   }
+  ?>
+
+  return(true);
+ }
+
+function FormOnSubmit()
+ {
+  if (FORM_SendFlag)
+   {
+    alert("Ваш запрос обрабатывается сервером. Пожалуйста подождите результата загрузки.");
+    return(false);
+   }
+  else
+   {
+    if (!FormCheckUpDataIsOk(document.FastLogInForm))
+     {
+      return(false);
+     }
+    else
+     {
+      FORM_SendFlag = true;
+      return(true);
+     }
+   }
+ }
+
+</SCRIPT>

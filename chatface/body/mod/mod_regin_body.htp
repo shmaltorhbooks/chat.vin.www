@@ -1,0 +1,204 @@
+<DIV align="center">
+<FONT face="arial" size="-1">
+
+<FORM name=SetupForm 
+      action="/_cgi/dreamchat.php" 
+      method="post" 
+      target="_top"
+      onsubmit="return FormOnSubmit();">
+
+
+
+<table width="100%" height="380" cellspacing="0" cellpadding="0" class="text" style="background-image: url('london4.jpg')">
+
+  <TR>
+    <TD valign="top" align="right" nowrap>
+     <FONT face="arial" size="-1"><B>Ник</B></FONT>
+    </TD>
+    <TD valign="top">
+     <INPUT class="field" type="text" size=15 maxlength=15 name="Nick" value="">
+    </TD>
+    <TD valign="top">
+     <FONT face="arial" size="-2">
+     Ник защишен от подбора сходных по начертанию слов<BR>
+     </FONT>
+    </TD>
+  </TR>
+  
+  <TR>
+    <TD valign="top" align="right" nowrap valign=top>
+     <FONT face="arial" size="-1"><B>Ваш пароль</B></FONT>
+    </TD>
+    <TD valign="top">
+     <INPUT type="password" class="field" 
+            size=15 maxlength=15 name="Password" value="">
+    </TD>
+    <TD valign="top" rowspan=2>
+     <FONT face="arial" size="-2">
+     Выберите себе пароль и введите его здесь.
+     Примечание: Пароль чуствителен к регистру букв 
+                 и языку (раскладке клавиатуры). 
+     </FONT>
+    </TD>
+  </TR>
+  
+  <TR>
+    <TD valign="top" align="right" nowrap valign=top>
+     <FONT face="arial" size="-1"><B>Повторите пароль</b></FONT>
+    </TD>
+    <TD valign="top">
+     <INPUT type="password" class="field" 
+            size=15 maxlength=15 name="PasswordAdd" value="">
+    </TD>
+  </TR>
+  
+  <TR>
+    <TD valign="middle" colspan="3">
+     <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+      <tr>
+       <td><img src="chatface/images/spacer.gif" border=0 width="1" height="2"></td>
+      </tr>
+     </table>
+    </TD>
+  </TR>
+  
+  <TR>
+    <TD valign="middle" align="right" nowrap>
+     <FONT face="arial" size="-1"><B>Пол</B></FONT>
+    </TD>
+    <TD valign="middle" colspan="2">
+     <SELECT name="Gender" class="field">
+      <SCRIPT>
+      FormDrawGenderOptions(FORM_Gender);
+      </SCRIPT>
+     </SELECT>
+    </TD>
+  </TR>
+  
+  <TR>
+    <TD valign="top" align="right" nowrap>
+     <FONT face="arial" size="-1"><B>Мой цвет</B></FONT>
+    </TD>
+    <TD valign="top" colspan="2">
+     <SCRIPT>
+     FormDrawColorControl(ForeColorsArray,"Color",FORM_Color,24,"");
+     </SCRIPT>
+    </TD>
+  </TR>
+  
+  <TR>
+    <TD valign="top" align="right" nowrap>
+     <FONT face="arial" size="-1"><B>E-Mail</B></FONT>
+    </TD>
+    <TD valign="top" colspan=2>
+     <INPUT class="field" type="text" size=15 maxlength=100 name="EMail" value="">
+    </TD>
+  </TR>
+
+  <TR>
+    <TD>
+    &nbsp;
+    </TD>
+    <TD valign="top" colspan=2>
+     <FONT face="arial" size="-2">
+     Ваш E-Mail не сообщается другим пользователям. Если E-Mail указан, на него будет выслан ваш пароль при использовании режима "забыл пароль".
+     </FONT>
+    </TD>
+  </TR>
+  
+  <TR>
+    <TD valign="top">
+     <FONT face="arial" size="-1">&nbsp;</FONT>
+    </TD>
+    <TD valign="top" colspan="2">
+     <FONT face="arial" size="-1">
+      <INPUT type="submit" class="button"
+             value="Вход в чат" name="CmdChatRegIn"
+             title="Зарегистрировать пользователя с этими параметрами">
+      <INPUT type="hidden" name="NickSrc" value="">
+     </FONT>
+    </TD>
+  </TR>
+  
+  <TR>
+   <TD valign="top" align=center colspan="3">
+   <HR class="form_hr">
+   <b>Дополнительные (необязательные) параметры:</b>
+   </TD>
+  </TR>
+  
+  <TR>
+   <TD valign="top" align="right" nowrap>
+    <FONT face="arial" size="-1"><B>О Себе</B></FONT>
+   </TD>
+   <TD valign="top" colspan="2">
+    
+    <TEXTAREA class="field" Name="SelfNotes"
+    TITLE="Информация о вас для других пользователей"
+    ROWS=3 COLS=50
+    STYLE="font-size: smaller"
+    WRAP=VIRTUAL
+    ></TEXTAREA><br>
+   </TD>
+  </TR>
+  
+  <TR>
+    <TD valign="top" align="right">
+     <FONT face="arial" size="-1"><b>Тема<b></FONT>
+    </TD>
+    <TD valign="top">
+     <INPUT class="field" type="text" size=15 maxlength=40 name="Topic" value="">
+    </TD>
+    <TD valign="top">
+     <FONT face="arial" size="-2">
+     Необязательный параметр.
+     Ваше настроение/вопрос/тема на сегодня.
+     Этот текст будет выведен рядом с вашим ником после входа в чат
+     </FONT>
+    </TD>
+  </TR>
+  <TR>
+    <TD valign="top" align="right">
+     <FONT face="arial" size="-1">&nbsp;</FONT>
+    </TD>
+    <TD valign="top" colspan="2">
+     <INPUT type="checkbox" 
+            CHECKED 
+            name="GZIP"
+            value="1"
+            title="Автоматически включить сжатие данных по GZIP, если броузер поддерживает GZIP stream (IE,Mozzila - поддерживают). Если у вас проблемы с отображением чата при включеном этом флажке, отключите его.">
+     <FONT face="arial" size="-2">
+     Включить сжатие данных, если поддерживается броузером
+     </FONT>
+    </TD>
+  </TR>
+  <TR>
+    <TD valign="top" align="right">
+     <FONT face="arial" size="-1">Стиль</FONT>
+    </TD>
+    <TD valign="top" colspan="2">
+     <INPUT type="radio" 
+            CHECKED 
+            name="ClientMode"
+            value="0"
+            title="Класический стиль чата (максимальная совместимость)">
+     <FONT face="arial" size="-2">
+     Класический стиль
+     </FONT>
+     <BR/>
+     <INPUT type="radio" 
+            name="ClientMode"
+            value="2"
+            title="Новый стиль чата (необходим IE 6.0 или выше либо Mozilla/FireFox 1.5 или выше)">
+     <FONT face="arial" size="-2">
+     Modern
+     </FONT>
+    </TD>
+  </TR>
+</TABLE>
+<INPUT type="hidden" name="PreSID" value="">
+<INPUT type="hidden" name="LogData" value="">
+<INPUT type="hidden" name="LogDataAdd" value="">
+</FORM>
+</FONT>
+</DIV>

@@ -1,0 +1,92 @@
+<? /* ======= PreSID Support ============================================ */ ?>
+
+<?
+include_once(dirname(__FILE__)."/"."../../../_cgi/inc/hash.inc.php");
+include_once(dirname(__FILE__)."/"."../../../_cgi/inc/funcstr.inc.php");
+?>
+
+<SCRIPT language="JavaScript">
+<?
+  $FORM_PreSID = ChatHashMakeFull();
+?>
+
+var FORM_PreSID  = <? echo JSFldStr($FORM_PreSID); ?>;
+</SCRIPT>
+
+<? /* ======= LogData Support =========================================== */ ?>
+
+<?
+include_once(dirname(__FILE__)."/"."../../../_cgi/inc/chatlinconst.inc.php");
+include_once(dirname(__FILE__)."/"."../../../_cgi/inc/chatlindatafunc.inc.php");
+
+if (!defined("ChatConstLogDataActiveFlag"))
+ {
+  // --- LogData Support OFF Begin ---
+  ?>
+<SCRIPT language="JavaScript">
+
+function ChatFillLogDataForFormByName
+          (ActionForm,
+           FieldNameNick,
+           FieldNamePassword,
+           FieldNameLogData)
+ {
+  ActionForm[FieldNameLogData].value = "";
+  return(true);
+ }
+
+</SCRIPT>
+  <?
+  // --- LogData Support OFF End ---
+ }
+else
+ {
+  // --- LogData Support ON Begin ---
+  ?>
+
+<SCRIPT language="JavaScript">
+<? include_once(dirname(__FILE__)."/"."../../../chat/chatcode.js.php") ?>
+<? include_once(dirname(__FILE__)."/"."../../../chat/chatlindata.js.php") ?>
+</SCRIPT>
+
+<SCRIPT language="JavaScript">
+var FORM_PrePass = <? echo ChatPrePassValueJSDraw_Text($FORM_PreSID); ?>;
+
+function ChatFillLogDataForFormByName
+          (ActionForm,
+           FieldNameNick,
+           FieldNamePassword,
+           FieldNameLogData)
+ {
+  ActionForm[FieldNameLogData].value = 
+   ChatLogDataMake
+    (ActionForm[FieldNamePassword].value,
+     FORM_PrePass,
+     ActionForm.PreSID.value,
+     ActionForm[FieldNameNick].value);
+
+  if (ActionForm[FieldNameLogData].value == "")
+   {
+    alert("Неуспешная обработка данных пароля"+" "+
+          "(возможно, в пароле некорректные символы)");
+    return(false);
+   }
+
+  <?
+  if (defined("ChatConstLogDataPasswordClearPlainTextFlag"))
+   {
+    ?>
+    ActionForm[FieldNamePassword].value = "";
+    <?
+   }
+  ?>
+
+  return(true);
+ }
+
+</SCRIPT>
+
+  <?
+  // --- LogData Support ON End ---
+ }
+?>

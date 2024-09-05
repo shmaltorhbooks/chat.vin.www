@@ -1,0 +1,57 @@
+<div class="header">
+<div align=center>
+<html>
+<body>
+
+
+<table width="100%" height="50"  cellspacing="0" cellpadding="0" class="text" style="background-image: url('london2.jpg')">
+
+
+       <tr>
+        <td  width="100%" align="center" valign="top">   
+
+
+
+
+
+   <font size="+0" font face="arial"  color="#000000">
+
+    Регистрация нового пользователя 
+</b>
+   </font>
+<br>
+                          </td>
+                        </tr>
+
+
+</table>
+</div>
+</div>
+
+<? include_once(dirname(__FILE__)."/"."../../../_cgi/tpl/cformio.php"); ?>
+<?
+if (FORM_IOStrVar('ChatErrorText') != "")
+ {
+  ?>
+  <div class="header">
+  <div align="center" class="error_mess">
+    Ошибка обработки<br>
+    Причина: <?=FORM_IOStrVar('ChatErrorText') ?>
+  </div>
+  </div>
+  <?
+ }
+else if (FORM_IOStrVar('ChatMessText') != "")
+ {
+  ?>
+  <div class="header">
+  <div align="center" class="aux_mess">
+    <?=FORM_IOStrVar('ChatMessText') ?>
+  </div>
+  </div>
+  <?
+ }
+else
+ {
+ }
+?>

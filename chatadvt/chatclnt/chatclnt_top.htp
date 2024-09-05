@@ -1,0 +1,3 @@
+<!-- Top baners here -->
+<? include(dirname(__FILE__)."/"."chatclnt.htp"); ?>
+<!-- Top baners here -->

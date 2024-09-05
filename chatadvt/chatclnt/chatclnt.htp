@@ -1,0 +1,36 @@
+<!-- ChatClient baners here -->
+<?
+// Default implemenation
+global $banner_slots;
+$banner_slots = 10; // slots 0..9 (one slot is 10%)
+
+function banner_mdigit()
+ { 
+  global $banner_slots;
+  list($usec, $sec) = explode(" ", microtime()); 
+  return ((int)(round($usec * $banner_slots))); 
+ } 
+
+$banner_selector  = ((int)(time()) % $banner_slots);
+$banner_selector += mt_rand(0,$banner_slots-1);
+$banner_selector += banner_mdigit();
+$banner_selector  = $banner_selector % $banner_slots;
+
+//echo $banner_selector;
+
+switch($banner_selector)
+ {
+  case(0):
+   {
+    include(dirname(__FILE__)."/"."../usr/usrlocal/chatclnt_advt_zz.inc");
+//  include(dirname(__FILE__)."/"."../usr/parts/s_abn.inc");
+   } break;
+
+  default:
+   {
+    include(dirname(__FILE__)."/"."../usr/usrlocal/chatclnt_advt_zz.inc");
+//  include(dirname(__FILE__)."/"."../usr/parts/s_abn.inc");
+   }
+ }
+?>
+<!-- ChatClient baners here -->

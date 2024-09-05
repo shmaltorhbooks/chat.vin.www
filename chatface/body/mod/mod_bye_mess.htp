@@ -1,0 +1,34 @@
+<? include_once(dirname(__FILE__)."/"."../../../_cgi/tpl/cformio.php"); ?>
+<div class="header">
+ <div align="center">
+ <!-- <?=FORM_IOStrVar('Color') ?> -->
+ До свидания <?=FORM_IOStrVar('Nick') ?>
+ </div>
+</div>
+
+<? include     (dirname(__FILE__)."/"."../../../s_main.php"); ?>
+
+<div class="text">
+ <div align="center">
+ До новых встреч в 
+ <a href="/" target="_top" class="link">
+ <? echo $TextMainChatServerNameStr; ?>
+ </a>
+ </div>
+</div>
+
+<?
+if (FORM_IOStrVar('ChatErrorText') != "")
+ {
+  ?>
+  <div class="header">
+  <div align="center" class="error_mess">
+    Примечание: Ошибка обработки запроса выхода.
+    <br>
+    Причина: <?=FORM_IOStrVar('ChatErrorText') ?>
+  </div>
+  </div>
+  <?
+ }
+?>
+

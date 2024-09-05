@@ -1,0 +1,35 @@
+<div class="header">
+<div align=center>
+ <font size=-1>
+  Изменение конфигурации пользователя
+ </font>
+</div>
+</div>
+
+<? include_once(dirname(__FILE__)."/"."../../../_cgi/tpl/cformio.php"); ?>
+<?
+if (FORM_IOStrVar('ChatErrorText') != "")
+ {
+  ?>
+  <div class="header">
+  <div align="center" class="error_mess">
+    Ошибка обработки.<br>
+    Причина: <?=FORM_IOStrVar('ChatErrorText') ?>
+  </div>
+  </div>
+  <?
+ }
+else if (FORM_IOStrVar('ChatMessText') != "")
+ {
+  ?>
+  <div class="header">
+  <div align="center" class="aux_mess">
+    <?=FORM_IOStrVar('ChatMessText') ?>
+  </div>
+  </div>
+  <?
+ }
+else
+ {
+ }
+?>
